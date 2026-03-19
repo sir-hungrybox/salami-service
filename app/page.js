@@ -103,6 +103,21 @@ export default function Page() {
     setScreen("confirmation");
   }, [sendData]);
 
+  const handleDeleteTx = useCallback(async (txId) => {
+    try {
+      const res = await fetch("/api/transactions", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ txId }),
+      });
+      const data = await res.json();
+      setBalance(data.balance);
+      setTransactions(data.transactions);
+    } catch {
+      setTransactions((prev) => prev.filter((t) => t.id !== txId));
+    }
+  }, []);
+
   const goHome = () => {
     setSendData({});
     setLastTx(null);
@@ -150,7 +165,7 @@ export default function Page() {
         <ConfirmationScreen transaction={lastTx} onGoHome={goHome} />
       )}
       {screen === "history" && (
-        <HistoryScreen transactions={transactions} onBack={goHome} />
+        <HistoryScreen transactions={transactions} onBack={goHome} onDelete={handleDeleteTx} />
       )}
 
       {toast && <Toast message={toast} onClose={() => setToast("")} />}

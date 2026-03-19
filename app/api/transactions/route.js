@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import {
   getSharedTransactions,
   addSharedTransaction,
+  removeSharedTransaction,
   getSharedBalance,
   setSharedBalance,
 } from "@/lib/store";
@@ -27,4 +28,11 @@ export async function POST(request) {
   const transactions = await addSharedTransaction(tx);
 
   return NextResponse.json({ balance: newBalance, transactions });
+}
+
+export async function DELETE(request) {
+  const { txId } = await request.json();
+  const transactions = await removeSharedTransaction(txId);
+  const balance = await getSharedBalance();
+  return NextResponse.json({ balance, transactions });
 }
