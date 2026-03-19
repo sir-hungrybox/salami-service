@@ -220,25 +220,6 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
                 display: "block",
               }}
             />
-            {/* Sponsored tag */}
-            <div
-              style={{
-                position: "absolute",
-                top: 8,
-                left: 8,
-                background: "rgba(0,0,0,0.45)",
-                backdropFilter: "blur(4px)",
-                color: "#fff",
-                fontSize: 9,
-                fontWeight: 500,
-                fontFamily: "'Poppins', sans-serif",
-                padding: "2px 7px",
-                borderRadius: 6,
-                letterSpacing: 0.3,
-              }}
-            >
-              Ad
-            </div>
           </div>
           <div
             style={{
@@ -253,7 +234,7 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
             }}
           >
             <span>🎵</span>
-            <span>বিকাশে Spotify Premium কিনুন — <span style={{ color: "#1DB954", fontWeight: 600 }}>ট্যাপ করুন</span></span>
+            <span>দালাল ছাড়া নিজে Spotify Premium কিনতে <span style={{ color: "#1DB954", fontWeight: 600 }}>ট্যাপ করুন</span></span>
           </div>
         </a>
       </div>
