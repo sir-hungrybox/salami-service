@@ -208,6 +208,7 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
               overflow: "hidden",
               boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
               animation: "fadeSlideUp 0.5s ease-out 0.1s both",
+              position: "relative",
             }}
           >
             <img
@@ -219,6 +220,40 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
                 display: "block",
               }}
             />
+            {/* Sponsored tag */}
+            <div
+              style={{
+                position: "absolute",
+                top: 8,
+                left: 8,
+                background: "rgba(0,0,0,0.45)",
+                backdropFilter: "blur(4px)",
+                color: "#fff",
+                fontSize: 9,
+                fontWeight: 500,
+                fontFamily: "'Poppins', sans-serif",
+                padding: "2px 7px",
+                borderRadius: 6,
+                letterSpacing: 0.3,
+              }}
+            >
+              Ad
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: 5,
+              marginTop: 6,
+              fontSize: 11,
+              color: "#999",
+              fontFamily: "'Noto Sans Bengali', sans-serif",
+            }}
+          >
+            <span>🎵</span>
+            <span>বিকাশে Spotify Premium কিনুন — <span style={{ color: "#1DB954", fontWeight: 600 }}>ট্যাপ করুন</span></span>
           </div>
         </a>
       </div>
