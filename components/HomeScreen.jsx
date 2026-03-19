@@ -234,7 +234,7 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
             }}
           >
             <span>🎵</span>
-            <span>দালাল ছাড়া নিজে Spotify Premium কিনতে <span style={{ color: "#1DB954", fontWeight: 600 }}>ট্যাপ করুন</span></span>
+            <span>বিকাশে Spotify Premium কিনতে <span style={{ color: "#1DB954", fontWeight: 600 }}>ট্যাপ করুন</span></span>
           </div>
         </a>
       </div>
