@@ -3,7 +3,13 @@ import "./globals.css";
 export const metadata = {
   title: "বিকাশ — EKRAM",
   description: "Eid Salami Service",
-  viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
   themeColor: "#E2136E",
 };
 
