@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "বিকাশ — EKRAM",
+  title: "সালামি নিন বিকাশে",
   description: "Eid Salami Service",
 };
 
