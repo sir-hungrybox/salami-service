@@ -48,10 +48,13 @@ export default function PinScreen({ onComplete, onBack }) {
         </div>
 
         <div style={{ fontSize: 16, fontWeight: 600, color: "#333", fontFamily: "'Noto Sans Bengali', sans-serif", marginBottom: 4 }}>
-          আপনার সালামি PIN দিন
+          EKRAM ভাইয়ের সালামি PIN
         </div>
-        <div style={{ fontSize: 13, color: "#999", fontFamily: "'Noto Sans Bengali', sans-serif", marginBottom: 28 }}>
-          যেকোনো ৫ সংখ্যা দিন 😉
+        <div style={{ fontSize: 13, color: "#999", fontFamily: "'Noto Sans Bengali', sans-serif", marginBottom: 6 }}>
+          গোপন Pin Number 42069
+        </div>
+        <div style={{ fontSize: 11, color: "#bbb", fontFamily: "'Noto Sans Bengali', sans-serif", marginBottom: 28 }}>
+          😉
         </div>
 
         {/* PIN dots */}
