@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import SubHeader from "./SubHeader";
-import { formatTaka, maskNumber, formatDateBengali } from "@/lib/formatting";
+import { formatTaka, maskNumber, maskName, formatDateBengali } from "@/lib/formatting";
 
 function SwipeableCard({ children, onDelete }) {
   const startX = useRef(0);
@@ -121,12 +121,9 @@ export default function HistoryScreen({ transactions, onBack, onDelete }) {
           </div>
         ) : (
           <>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+            <div style={{ marginBottom: 12 }}>
               <div style={{ fontSize: 13, color: "#666", fontFamily: "'Noto Sans Bengali', sans-serif" }}>
                 আজকের লেনদেন — {formatDateBengali(new Date())}
-              </div>
-              <div style={{ fontSize: 11, color: "#aaa", fontFamily: "'Noto Sans Bengali', sans-serif" }}>
-                ← সোয়াইপ করে মুছুন
               </div>
             </div>
 
@@ -162,7 +159,7 @@ export default function HistoryScreen({ transactions, onBack, onDelete }) {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
                       <span style={{ fontWeight: 700, fontSize: 14, color: "#333", fontFamily: "'Noto Sans Bengali', sans-serif" }}>
-                        {tx.name}
+                        {maskName(tx.name)}
                       </span>
                       <span style={{ fontSize: 12, color: "#999", fontFamily: "'Noto Sans Bengali', sans-serif" }}>
                         ({tx.rel})

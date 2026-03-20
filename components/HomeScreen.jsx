@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { HOST_NAME, SERVICE_ITEMS, TOAST_MESSAGES } from "@/lib/constants";
-import { formatTaka } from "@/lib/formatting";
+import { formatTaka, maskName } from "@/lib/formatting";
 import BottomNav from "./BottomNav";
 
 export default function HomeScreen({ balance, transactions, onNavigate, showToast }) {
@@ -292,7 +292,7 @@ export default function HomeScreen({ balance, transactions, onNavigate, showToas
                 💸
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: 14, color: "#333", fontFamily: "'Noto Sans Bengali', sans-serif" }}>{tx.name}</div>
+                <div style={{ fontWeight: 600, fontSize: 14, color: "#333", fontFamily: "'Noto Sans Bengali', sans-serif" }}>{maskName(tx.name)}</div>
                 <div style={{ fontSize: 12, color: "#999", fontFamily: "'Poppins', sans-serif" }}>{tx.time}</div>
               </div>
               <div style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: 14, color: "#E2136E" }}>
