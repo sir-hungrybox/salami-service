@@ -14,15 +14,19 @@ import Toast from "@/components/Toast";
 import { STARTING_BALANCE } from "@/lib/constants";
 import { genTxId, formatTime } from "@/lib/formatting";
 
+const API_KEY = "ekram-salami-2026";
+
 async function fetchSharedState() {
-  const res = await fetch("/api/transactions");
+  const res = await fetch("/api/transactions", {
+    headers: { "x-api-key": API_KEY },
+  });
   return res.json();
 }
 
 async function postTransaction(tx) {
   const res = await fetch("/api/transactions", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
     body: JSON.stringify(tx),
   });
   return res.json();
@@ -107,7 +111,7 @@ export default function Page() {
     try {
       const res = await fetch("/api/transactions", {
         method: "DELETE",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "x-api-key": API_KEY },
         body: JSON.stringify({ txId }),
       });
       const data = await res.json();
